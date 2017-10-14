@@ -13,10 +13,21 @@ app.get('/', function (req, res) {
 })
 
 
+
+app.get('/usuarioMobil', function (req, res) {
+  res.send('Hola Mundo usuarioMobil')
+})
+
+app.get('/usuarioWeb', function (req, res) {
+  res.send('Hola Mundo usuarioWeb')
+})
+
+
+
 var port = process.env.PORT || 3000;
 
 var server = app.listen(port, function () {
-  console.log('Example app listening on ${port} 3000!')
+  console.log(`Example app listening on ${port}!`)
 })
 
 exports.closeServer = function(){
