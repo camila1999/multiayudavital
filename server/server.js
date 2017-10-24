@@ -2,15 +2,13 @@ var express = require('express');
 var mongoose = require('mongoose');
 var app = express ();
 
+app.use(express.static('public'))
+
 var db = mongoose.connect("mongodb://multiayudavital:multiayudavital1@ds111535.mlab.com:11535/multiayudavital",
   {useMongoClient: true,}
 );
 
 var exports = module.exports = {};
-
-app.get('/', function (req, res) {
-  res.send('Hola Mundo')
-})
 
 
 
