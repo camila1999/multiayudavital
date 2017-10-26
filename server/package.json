@@ -6,6 +6,6 @@
   "dependencies": {
     "express": "latest",
     "lodash": "^4.17.4",
-    "mongoose": "^4.12.0",
+    "mongoose": "^4.12.0"
   }
 }
