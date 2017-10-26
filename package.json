@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Ejemplo de API Rest",
   "main": "sever.js",
+  "scripts": {
+  "start": "node server.js"
+},
   "dependencies": {
     "express": "latest",
     "mongoose": "^4.12.0",
