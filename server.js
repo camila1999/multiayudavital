@@ -1,6 +1,5 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var moment = require('moment');
 var app = express ();
 var exports = module.exports = {};
 
