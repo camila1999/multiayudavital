@@ -11,6 +11,8 @@
     <script src="js/datatables.min.js"></script>
     <script type="text/javascript">
 
+        var mapURL = "https://www.google.com/maps/search/?api=1&query="
+
         $(document).ready(function() {
             $('#example').DataTable( {
                 "ajax": {"url":'https://multiayudavital.herokuapp.com/usuarioWeb',"dataSrc":""},
@@ -18,7 +20,7 @@
                     "targets": 2,
                     "data": "ubicacion",
                     "render": function ( data, type, row, meta ) {
-                        return '<a href="'+data+'">Download</a>';
+                        return '<a href="'+mapURL+data['logitud']+'">Download</a>';
                     }
                 } ],
                 columns: [
