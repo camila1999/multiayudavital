@@ -21,9 +21,9 @@
                     "data": "ubicacion",
                     "render": function ( data, type, row, meta ) {
                         console.log(data);
-                        console.log(mapa['longitud']);
+                        console.log(mapa['longitude']);
                         var mapa = JSON.parse(jsontext);
-                        return '<a target="_blank" href="'+mapURL+mapa['longitud']+'">ver mapa</a>';
+                        return '<a target="_blank" href="'+mapURL+mapa['longitude']+'">ver mapa</a>';
                     }
                 } ],
                 columns: [
