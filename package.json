@@ -4,9 +4,10 @@
   "description": "Ejemplo de API Rest",
   "main": "sever.js",
   "scripts": {
-  "start": "node server.js"
-},
+    "start": "node server.js"
+  },
   "dependencies": {
+    "dateformat": "^3.0.2",
     "express": "latest",
     "mongoose": "^4.12.0",
     "react": "^16.0.0",

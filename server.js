@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var dateFormat = require('dateFormat');
 var app = express ();
 
 var db = mongoose.connect("mongodb://multiayudavital_web_app1:multiayudavital1@ds111535.mlab.com:11535/multiayudavital",
@@ -25,7 +26,7 @@ app.get('/usuarioMobil', function (req, res) {
   console.log('Este es el tipo de emergencia: ' + req.query.tipoDeEmergencia);
   console.log('Esta es la ubicacion: ' + req.query.ubicacion);
 
-  var fecha = moment().format();
+  var fecha = dateFormat(Date.now(), "yyyy-mm-dd h:MM:ss");
   var nombreUsuario = req.query.nombreUsuario;
   var tipoDeEmergencia = req.query.tipoDeEmergencia;
   var ubicacion = req.query.ubicacion;
