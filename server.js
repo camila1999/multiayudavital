@@ -22,6 +22,7 @@ app.get('/', function (req, res) {
 
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/public'));
+var html_dir = './public/';
 
 // set the home page route
 app.get('/index', function(req, res) {
@@ -34,13 +35,6 @@ app.get('/emergencias', function(req, res) {
 
     // ejs render automatically looks in the views folder
     res.render('emergencias');
-})
-
-// set the home page route
-app.get('/exito', function(req, res) {
-
-    // ejs render automatically looks in the views folder
-    res.render('exito');
 })
 
 app.post('/usuarioMobil', function (req, res) {
@@ -60,7 +54,7 @@ app.post('/usuarioMobil', function (req, res) {
 	  ubicacion: JSON.parse(ubicacion)
   });
   datosAInsertar.save();
-    res.sendfile('/public' + 'exito.html');
+    res.sendfile(html_dir + 'exito.html');
 
 })
 
