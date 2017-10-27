@@ -8,9 +8,9 @@ var db = mongoose.connect("mongodb://multiayudavital_web_app1:multiayudavital1@d
 db.on('error', console.error.bind(console, 'connection error:'));
 var usuariosEmergenciasSchema = mongoose.Schema({
 	fecha: String,
-  usuario: String,
+    usuario: String,
 	tipo_emergencia: String,
-	ubicacion: String
+	ubicacion: { longitude: String, latitude: String, accuracy: String }
 });
 var usuariosEmergenciasModel = mongoose.model('Usuarios_Emergencias',usuariosEmergenciasSchema);
 

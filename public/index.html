@@ -36,7 +36,7 @@
 
             function success(pos) {
                 var crd = pos.coords;
-                ubicacion = `ubicacion={latitude:${crd.latitude},longitude:${crd.longitude},accuracy:${crd.accuracy}}`;
+                ubicacion = `ubicacion={"latitude":${crd.latitude},"longitude":${crd.longitude},"accuracy":${crd.accuracy}}`;
             };
 
             function error(err) {
