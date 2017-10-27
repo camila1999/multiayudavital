@@ -47,7 +47,7 @@ app.post('/usuarioMobil', function (req, res) {
   var tipo_emergencia = req.query.tipo_emergencia;
   var ubicacion = req.query.ubicacion;
 
-  if(ubicacion!='undefined'){
+  if(ubicacion!='undefined' && ubicacion!=null){
       ubicacion = JSON.parse(ubicacion);
   }else {
       ubicacion = null;
