@@ -30,7 +30,14 @@ app.get('/index', function(req, res) {
     res.render('index');
 })
 
-app.get('/usuarioMobil', function (req, res) {
+// set the home page route
+app.get('/exito', function(req, res) {
+
+    // ejs render automatically looks in the views folder
+    res.render('exito');
+})
+
+app.post('/usuarioMobil', function (req, res) {
   console.log('Este es el nombre de usuario: ' + req.query.usuario);
   console.log('Este es el tipo de emergencia: ' + req.query.tipo_emergencia);
   console.log('Esta es la ubicacion: ' + req.query.ubicacion);
@@ -42,22 +49,22 @@ app.get('/usuarioMobil', function (req, res) {
 
   var datosAInsertar = new usuariosEmergenciasModel({
 	  fecha: fecha,
-    usuario: usuario,
+      usuario: usuario,
 	  tipo_emergencia: tipo_emergencia,
 	  ubicacion: ubicacion
   });
   datosAInsertar.save();
+    res.render('exito');
 
-  usuariosEmergenciasModel.find(function (err, records) {
-	  if (err) {
-		return console.error(err);
-	  }
-	  res.send(records);
-  });
 })
 
 app.get('/usuarioWeb', function (req, res) {
-  res.send('Hola Mundo usuarioWeb');
+    usuariosEmergenciasModel.find(function (err, records) {
+        if (err) {
+            return console.error(err);
+        }
+        res.send(records);
+    });
 })
 
 var port = process.env.PORT || 3000;
