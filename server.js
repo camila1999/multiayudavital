@@ -60,7 +60,7 @@ app.post('/usuarioMobil', function (req, res) {
 	  ubicacion: JSON.parse(ubicacion)
   });
   datosAInsertar.save();
-    res.sendfile('exito.html');
+    res.sendfile('/public' + 'exito.html');
 
 })
 
