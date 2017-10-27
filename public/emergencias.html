@@ -14,6 +14,13 @@
         $(document).ready(function() {
             $('#example').DataTable( {
                 "ajax": {"url":'https://multiayudavital.herokuapp.com/usuarioWeb',"dataSrc":""},
+                "columnDefs": [ {
+                    "targets": 0,
+                    "data": "ubicacion",
+                    "render": function ( data, type, row, meta ) {
+                        return '<a href="'+data+'">Download</a>';
+                    }
+                } ],
                 columns: [
                     { data: 'usuario' },
                     { data: 'tipo_emergencia' },
