@@ -30,6 +30,12 @@ app.get('/index', function(req, res) {
     res.render('index');
 })
 
+app.get('/emergencias', function(req, res) {
+
+    // ejs render automatically looks in the views folder
+    res.render('emergencias');
+})
+
 // set the home page route
 app.get('/exito', function(req, res) {
 
