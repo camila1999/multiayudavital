@@ -20,7 +20,9 @@
                     "targets": 2,
                     "data": "ubicacion",
                     "render": function ( data, type, row, meta ) {
-                        return '<a target="_blank" href="'+mapURL+data.latitude+','+data.longitude+'">ver mapa</a>';
+                        if(data) {
+                            return '<a target="_blank" href="' + mapURL + data.latitude + ',' + data.longitude + '">ver mapa</a>';
+                        }return "";
                     }
                 } ],
                 columns: [
