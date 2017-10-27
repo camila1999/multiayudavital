@@ -21,8 +21,8 @@
             var ubicacion = '';
             var tipo_emergencia = '';
 
-            //var url = 'https://multiayudavital.herokuapp.com/usuarioMobil?';
-            var url = 'http://localhost:3000/usuarioMobil?';
+            var url = 'https://multiayudavital.herokuapp.com/usuarioMobil?';
+            //var url = 'http://localhost:3000/usuarioMobil?';
 
             $("#gravisima").click(function () {
                 tipo_emergencia = 'tipo_emergencia=gravisima';
@@ -50,6 +50,7 @@
                 console.log(url);
                 $("#tmp").attr("action",url);
                 $("#tmp").submit();
+                $('#myModal').modal('show');
             }
         });
 
@@ -119,6 +120,23 @@
             <button id="gravisima" type="button" class="btn btn-lg btn-danger btn-block">Gravisimo</button>
         </div>
     </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Servidor</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Enviando datos.....
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
