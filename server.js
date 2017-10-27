@@ -1,4 +1,6 @@
 var express = require('express');
+var mongoose = require('mongoose');
+var moment = require('moment');
 var app = express ();
 var exports = module.exports = {};
 
@@ -12,7 +14,9 @@ app.get('/usuarioWeb', function (req, res) {
 
 var port = process.env.PORT || 3000;
 
-var server = app.listen(port)
+var server = app.listen(port, function () {
+  console.log(`Example app listening on ${port}!`);
+})
 
 exports.closeServer = function(){
   server.close();
