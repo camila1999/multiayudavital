@@ -57,7 +57,7 @@ app.post('/usuarioMobil', function (req, res) {
 	  fecha: fecha,
       usuario: usuario,
 	  tipo_emergencia: tipo_emergencia,
-	  ubicacion: ubicacion
+	  ubicacion: JSON.parse(ubicacion)
   });
   datosAInsertar.save();
     res.render('exito');
