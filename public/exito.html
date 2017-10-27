@@ -9,7 +9,15 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+            function submit(){
 
+
+                url = `index.html`;
+                console.log(url);
+                $("#tmp").attr("action",url);
+                $("#tmp").submit();
+                $('#myModal').modal('show');
+            }
         });
 
     </script>
@@ -71,7 +79,7 @@
     <form id="formUsuario">
         <div class="container">
             <div>Datos ingresados con exito!!</div>
-            <button id="gravisima" type="button" class="btn btn-lg btn-danger btn-block">Volver</button>
+            <a href="index.html" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Volver</a>
         </div>
     </form>
 </div>
