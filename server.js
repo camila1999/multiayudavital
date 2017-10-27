@@ -47,11 +47,17 @@ app.post('/usuarioMobil', function (req, res) {
   var tipo_emergencia = req.query.tipo_emergencia;
   var ubicacion = req.query.ubicacion;
 
+  if(ubicacion!='undefined'){
+      ubicacion = JSON.parse(ubicacion);
+  }else {
+      ubicacion = null;
+  }
+
   var datosAInsertar = new usuariosEmergenciasModel({
 	  fecha: fecha,
       usuario: usuario,
 	  tipo_emergencia: tipo_emergencia,
-	  ubicacion: JSON.parse(ubicacion)
+	  ubicacion: ubicacion
   });
   datosAInsertar.save();
     res.sendfile(html_dir + 'exito.html');
